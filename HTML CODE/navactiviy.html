@@ -1,0 +1,81 @@
+<!DOCTYPE html> 
+<html> 
+  <head> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Navigation Bar</title> 
+    <style> body { font-family: Arial, sans-serif; }
+    nav {
+        background: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    nav ul ul {
+        display: none;
+    }
+
+    nav ul li:hover > ul {
+        display: block;
+    }
+</style>
+</head> 
+<body> 
+  <nav> 
+    <ul> 
+      <li>
+        <a href="#">Home</a></li> 
+        <li> <a href="#">Product</a> 
+          <ul> 
+            <li> 
+              <a href="#">Product 1</a> 
+              <ul> 
+                <li><a href="#">Sub Product 1.1</a>
+                </li> <li><a href="#">Sub Product 1.2</a>
+                </li> 
+              </ul> 
+            </li> 
+            <li> 
+              <a href="#">Product 2</a>
+               <ul> 
+                <li><a href="#">Sub Product 2.1</a></li> 
+                <li><a href="#">Sub Product 2.2</a></li> 
+              </ul> 
+            </li> 
+          </ul> 
+        </li> 
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul> 
+    </nav> 
+
+    <script>
+      $(document).ready(function(){
+        $('.dropdown-submenu a.test').on("click", function(e){
+          $(this).next('ul').toggle();
+          e.stopPropagation();
+          e.preventDefault();
+        });
+      });
+      </script>
+  </body> 
+  </html>
